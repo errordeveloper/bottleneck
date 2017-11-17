@@ -12,8 +12,11 @@ const (
 	LongSleepMax  = 5000
 )
 
-func Sleep(min, max int) {
+func init() {
 	rand.Seed(time.Now().UnixNano())
+}
+
+func Sleep(min, max int) {
 	time.Sleep(time.Duration(rand.Intn(max)+min) * time.Millisecond)
 }
 
